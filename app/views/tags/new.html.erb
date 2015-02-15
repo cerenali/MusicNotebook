@@ -1,0 +1,15 @@
+<h1>Tags#new</h1>
+
+<%= form_for(@tag) do |f| %>
+	<div class="field">
+		<p>name</p>
+		<%= f.text_field :title %>
+	</div>
+	<div class="field">
+		<p>count</p>
+		<%= f.text_field :count %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

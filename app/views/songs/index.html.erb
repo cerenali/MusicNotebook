@@ -1,0 +1,18 @@
+<h1>Songs#index</h1>
+
+<table>
+	<tr>
+		<td>title</td>
+		<td>artist</td>
+	</tr>
+	<% @songs.each do |song| %>
+		<tr>
+			<td><%= song.title %></td>
+			<td><%= song.artist %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p><%= link_to "Add new song", new_song_path %></p>
+
+<p><%= link_to "Back to users", users_path %></p>

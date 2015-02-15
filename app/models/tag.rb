@@ -1,0 +1,13 @@
+# == Schema Information
+#
+# Table name: tags
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  count      :integer
+#
+
+class Tag < ActiveRecord::Base
+end
