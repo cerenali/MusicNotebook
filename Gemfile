@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'annotate'
 gem 'bootstrap-sass', '~> 3.3.3'
