@@ -1,28 +1,22 @@
 == README
+Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+=== Schema
+I had issues getting the Heroku app to run, but I fixed them by running "heroku run rake db:migrate" after pushing
+to Heroku. Also, I intend to have many-to-many relationships between Users and Songs, Users and Tags, and Songs and
+Tags, but we haven't gone over it yet in class, so the tables are currently not related to each other.
 
-Things you may want to cover:
+==== Users
+* id:integer
+* username:string
+* password:string
 
-* Ruby version
+==== Songs
+* id:integer
+* title:string
+* artist:string
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+==== Tags
+* id:integer
+* title:string
+* count:integer
