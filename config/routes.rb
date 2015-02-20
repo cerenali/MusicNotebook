@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  get 'tags/show'
+
+  get 'tags/edit'
+
+  get 'tags/delete'
+
+  get 'tag/show'
+
+  get 'tag/edit'
+
+  get 'tag/delete'
+
+  get 'songs/show'
+
+  get 'songs/edit'
+
+  get 'songs/delete'
+
+  get 'users/show'
+
+  get 'users/edit'
+
+  get 'users/delete'
+
   # get 'tags/new'
 
   # get 'tags/index'

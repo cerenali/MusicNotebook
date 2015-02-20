@@ -1,0 +1,15 @@
+<h1>Users#edit</h1>
+
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <p>name</p>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <p>password</p>
+    <%= f.text_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

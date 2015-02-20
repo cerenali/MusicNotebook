@@ -7,8 +7,9 @@
 	</tr>
 	<% @songs.each do |song| %>
 		<tr>
-			<td><%= song.title %></td>
+      <td><%= link_to song.title, song_path(song.id) %></td>
 			<td><%= song.artist %></td>
+      <td><%= link_to "delete song", song, data: { confirm: 'Are you sure?' }, method: :delete %> </td>
 		</tr>
 	<% end %>
 </table>
