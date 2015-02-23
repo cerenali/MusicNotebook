@@ -13,3 +13,9 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$container-width: 60%;
+
+.container {
+	width: $container-width;
+}

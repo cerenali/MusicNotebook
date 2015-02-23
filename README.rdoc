@@ -1,6 +1,9 @@
 == README
 Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
+=== Show/Edit/Destroy
+
+
 === Schema
 I had issues getting the Heroku app to run, but I fixed them by running "heroku run rake db:migrate" after pushing
 to Heroku. Also, I intend to have many-to-many relationships between Users and Songs, Users and Tags, and Songs and

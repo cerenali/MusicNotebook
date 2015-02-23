@@ -1,8 +1,10 @@
-<h1>Tags#show</h1>
+<div class="container">
+  <h1>Tags#show</h1>
 
-<div>
-  <h2><%= @tag.title %></h2>
+  <div>
+    <h2><%= @tag.title %></h2>
+  </div>
+
+  <%= link_to "edit tag", edit_tag_path(@tag.id) %>
+  <p><%= link_to "back to tags", tags_path %></p>
 </div>
-
-<%= link_to "edit tag", edit_tag_path(@tag.id) %>
-<p><%= link_to "back to tags", tags_path %></p>

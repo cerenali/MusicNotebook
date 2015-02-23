@@ -1,19 +1,22 @@
-<h1>Songs#index</h1>
+<div class="container">
+  <h1>Songs#index</h1>
 
-<table>
-	<tr>
-		<td>title</td>
-		<td>artist</td>
-	</tr>
-	<% @songs.each do |song| %>
-		<tr>
-      <td><%= link_to song.title, song_path(song.id) %></td>
-			<td><%= song.artist %></td>
-      <td><%= link_to "delete song", song, data: { confirm: 'Are you sure?' }, method: :delete %> </td>
-		</tr>
-	<% end %>
-</table>
+  <table class="table table-hover">
+  	<tr>
+  		<th>title</th>
+  		<th>artist</th>
+      <th>options</th>
+  	</tr>
+  	<% @songs.each do |song| %>
+  		<tr>
+        <td><%= link_to song.title, song_path(song.id) %></td>
+  			<td><%= song.artist %></td>
+        <td><%= link_to "delete song", song, data: { confirm: 'Are you sure?' }, method: :delete %> </td>
+  		</tr>
+  	<% end %>
+  </table>
 
-<p><%= link_to "Add new song", new_song_path %></p>
+  <p><%= link_to "Add new song", new_song_path %></p>
 
-<p><%= link_to "Back to users", users_path %></p>
+  <p><%= link_to "Back to users", users_path %></p>
+</div>

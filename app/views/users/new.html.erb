@@ -1,15 +1,17 @@
-<h1>Users#new</h1>
+<div class="container">
+  <h1>Users#new</h1>
 
-<%= form_for(@user) do |f| %>
-	<div class="field">
-		<p>name</p>
-		<%= f.text_field :username %>
-	</div>
-	<div class="field">
-		<p>password</p>
-		<%= f.text_field :password %>
-	</div>
-	<div class="actions">
-		<%= f.submit %>
-	</div>
-<% end %>
+  <%= form_for(@user) do |f| %>
+  	<div class="field">
+  		<p>name</p>
+  		<%= f.text_field :username %>
+  	</div>
+  	<div class="field">
+  		<p>password</p>
+  		<%= f.text_field :password %>
+  	</div>
+  	<div class="actions">
+  		<%= f.submit %>
+  	</div>
+  <% end %>
+</div>

@@ -1,11 +1,13 @@
-<h1>Tags#new</h1>
+<div class="container">
+  <h1>Tags#new</h1>
 
-<%= form_for(@tag) do |f| %>
-	<div class="field">
-		<p>name</p>
-		<%= f.text_field :title %>
-	</div>
-	<div class="actions">
-		<%= f.submit %>
-	</div>
-<% end %>
+  <%= form_for(@tag) do |f| %>
+  	<div class="field">
+  		<p>name</p>
+  		<%= f.text_field :title %>
+  	</div>
+  	<div class="actions">
+  		<%= f.submit %>
+  	</div>
+  <% end %>
+</div>
