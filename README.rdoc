@@ -2,12 +2,17 @@
 Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
 === Show/Edit/Destroy
-
+I created show, edit, and destroy controllers for each of my models (Users,
+Songs, and Tags), and edited the html.erb files to provide access to these
+functionalities. I also installed a missing gem (rails_12factor) to get the 
+CSS to show on the Heroku app, and prettied it up a bit with Bootstrap. This
+was all relatively straightforward, and I haven't run into any insurmountable
+challenges yet.
 
 === Schema
 I had issues getting the Heroku app to run, but I fixed them by running "heroku run rake db:migrate" after pushing
 to Heroku. Also, I intend to have many-to-many relationships between Users and Songs, Users and Tags, and Songs and
-Tags, but we haven't gone over it yet in class, so the tables are currently not related to each other.
+Tags, so the tables will eventually be related to each other.
 
 ==== Users
 * id:integer
