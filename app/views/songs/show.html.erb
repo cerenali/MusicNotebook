@@ -1,9 +1,11 @@
-<h1>Songs#show</h1>
+<div class="container">
+  <h1>Songs#show</h1>
 
-<div>
-  <h2><%= @song.title %></h2>
-  <p><%= @song.artist %></p>
+  <div>
+    <h2><%= @song.title %></h2>
+    <p><%= @song.artist %></p>
+  </div>
+
+  <%= link_to "edit song", edit_song_path(@song.id) %>
+  <p><%= link_to "back to songs", songs_path %></p>
 </div>
-
-<%= link_to "edit song", edit_song_path(@song.id) %>
-<p><%= link_to "back to songs", songs_path %></p>
