@@ -1,16 +1,17 @@
-<div class="container">
   <h1>Users#index</h1>
 
   <table class="table table-hover">
   	<tr>
   		<th>name</th>
+      <th>email</th>
   		<th>password</th>
       <th>options</th>
   	</tr>
   	<% @users.each do |user| %>
   		<tr>
   			<td><%= link_to user.username, user_path(user.id) %></td>
-  			<td><%= user.password %></td>
+  			<td><%= user.email %></td>
+        <td><%= user.password %></td>
         <td><%= link_to "delete user", user, data: { confirm: 'Are you sure?' }, method: :delete %> </td>
   		</tr>
   	<% end %>
@@ -21,4 +22,3 @@
   <p><%= link_to "View songs", songs_path %></p>
 
   <p><%= link_to "View tags", tags_path %></p>
-</div>

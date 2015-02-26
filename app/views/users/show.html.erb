@@ -1,11 +1,10 @@
-<div class="container">
   <h1>Users#show</h1>
 
   <div>
     <h2><%= @user.username %></h2>
+    <p><%= @user.email %></p>
     <p><%= @user.password %></p>
   </div>
 
   <%= link_to "edit user", edit_user_path(@user.id) %>
   <p><%= link_to "back to users", users_path %></p>
-</div>

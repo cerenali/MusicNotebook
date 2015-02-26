@@ -1,27 +1,28 @@
 Rails.application.routes.draw do
-  get 'tags/show'
+  devise_for :users
+  # get 'tags/show'
 
-  get 'tags/edit'
+  # get 'tags/edit'
 
-  get 'tags/delete'
+  # get 'tags/delete'
 
-  get 'tag/show'
+  # get 'tag/show'
 
-  get 'tag/edit'
+  # get 'tag/edit'
 
-  get 'tag/delete'
+  # get 'tag/delete'
 
-  get 'songs/show'
+  # get 'songs/show'
 
-  get 'songs/edit'
+  # get 'songs/edit'
 
-  get 'songs/delete'
+  # get 'songs/delete'
 
-  get 'users/show'
+  # get 'users/show'
 
-  get 'users/edit'
+  # get 'users/edit'
 
-  get 'users/delete'
+  # get 'users/delete'
 
   # get 'tags/new'
 

@@ -1,4 +1,3 @@
-<div class="container">
   <h1>Users#new</h1>
 
   <%= form_for(@user) do |f| %>
@@ -6,6 +5,10 @@
   		<p>name</p>
   		<%= f.text_field :username %>
   	</div>
+    <div class="field">
+      <p>name</p>
+      <%= f.text_field :email %>
+    </div>
   	<div class="field">
   		<p>password</p>
   		<%= f.text_field :password %>
@@ -14,4 +17,3 @@
   		<%= f.submit %>
   	</div>
   <% end %>
-</div>
