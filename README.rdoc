@@ -1,6 +1,15 @@
 == README
 Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
+=== Gems and Validations
+I added two gems: Devise for user authentication, and Rails_Layout to generate
+nice default Bootstrap 3 views. I also added three validations to the User model: one
+to ensure that a username is present, one to ensure an email is present and
+correctly formatted, and one to ensure that a password at least 8 characters
+long is present. I had trouble with the "Edit User" functionality at first, as
+it was allowing any user who signed in to edit any other user, but I fixed it by
+placing a condition around the "Edit User" link (<tt><% if current_user == @user %></tt>).
+
 === Show/Edit/Destroy
 I created show, edit, and destroy controllers for each of my models (Users,
 Songs, and Tags), and edited the html.erb files to provide access to these

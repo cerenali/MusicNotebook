@@ -1,17 +1,27 @@
   <h1>Users#edit</h1>
 
+  <div class="error-msg">
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %> 
+  </div>
+
   <%= form_for(@user) do |f| %>
     <div class="field">
-      <p>name</p>
+      <%= f.label :username %><br />
       <%= f.text_field :username %>
     </div>
     <div class="field">
-      <p>name</p>
-      <%= f.text_field :email %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email %>
     </div>
     <div class="field">
-      <p>password</p>
-      <%= f.text_field :password %>
+      <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off" %></div>
     </div>
     <div class="actions">
       <%= f.submit %>
