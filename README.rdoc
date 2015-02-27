@@ -3,12 +3,21 @@ Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
 === Gems and Validations
 I added two gems: Devise for user authentication, and Rails_Layout to generate
-nice default Bootstrap 3 views. I also added three validations to the User model: one
-to ensure that a username is present, one to ensure an email is present and
-correctly formatted, and one to ensure that a password at least 8 characters
-long is present. I had trouble with the "Edit User" functionality at first, as
-it was allowing any user who signed in to edit any other user, but I fixed it by
+nice default Bootstrap 3 views. Additionally, I added two validations to the User model: one
+to ensure that a username is present and one to ensure an email is present and
+correctly formatted. I also added two presence validations to the Song and Tag models for their respective fields
+(title/artist and title, respectively).
+
+I had trouble with the "Edit User" functionality at first, as
+the original setup was allowing any user who signed in to edit any other user, but I fixed it by
 placing a condition around the "Edit User" link (<tt><% if current_user == @user %></tt>).
+I also restricted users' ability to delete users to only their own accounts.
+
+Another issue I had was that the "Edit User" page was requiring both a current password
+and a new password. This turned out to be because I had included a validation for the
+"password" field in the User model; removing this validation took care of the problem.
+(It turns out Devise automatically validates the password on its own, so I didn't
+even need to have a validation for it.)
 
 === Show/Edit/Destroy
 I created show, edit, and destroy controllers for each of my models (Users,
