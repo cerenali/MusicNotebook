@@ -8,6 +8,7 @@ gem 'devise'
 group :development do
   gem 'rails_layout'
   gem 'sqlite3'
+  gem 'letter_opener', github: 'ryanb/letter_opener'
 end
 
 group :production do
