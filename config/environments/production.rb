@@ -7,10 +7,10 @@ Rails.application.configure do
   # Configuration for mailer (sendgrid)
   config.action_mailer.default_url_options = {host: 'evening-fjord-8412.herokuapp.com'}
   config.action_mailer.smtp_settings = {
-    :address    => 'smtp.sendgrid.net'
-    :port       => '587'
-    :user_name  => ENV['SENDGRID_USERNAME']
-    :password   => ENV['SENDGRID_PASSWORD']
+    :address    => 'smtp.sendgrid.net',
+    :port       => '587',
+    :user_name  => ENV['SENDGRID_USERNAME'],
+    :password   => ENV['SENDGRID_PASSWORD'],
     :domain     => ENV['SENDGRID_DOMAIN']
   }
 
