@@ -10,6 +10,6 @@ class Notifications < ApplicationMailer
     @name = user.name
     @email = user.email
 
-    mail to: @email
+    mail to: user.email
   end
 end
