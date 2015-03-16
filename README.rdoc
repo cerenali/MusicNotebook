@@ -2,7 +2,10 @@
 Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
 === Heroku Add-Ons
-I added the SendGrid add-on to my Heroku app. 
+I added the SendGrid add-on to my Heroku app. At first, I had problems with the
+SendGrid environmental variables, as some of them were not set in Heroku.
+This was resolved by setting the missing environment variable in Heroku:
+<<tt>heroku config:add SENDGRID_DOMAIN=[link to my app]</tt>.
 
 === Gems and Validations
 I added two gems: Devise for user authentication, and Rails_Layout to generate
