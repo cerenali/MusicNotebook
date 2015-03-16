@@ -6,7 +6,7 @@ class Notifications < ApplicationMailer
   #   en.notifications.new_user.subject
   #
   def new_user(user)
-    @greeting = "Hi!"
+    @greeting = "Hello"
     @name = user.name
     @email = user.email
 
