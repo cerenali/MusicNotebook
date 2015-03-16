@@ -1,6 +1,9 @@
 == README
 Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
+=== Heroku Add-Ons
+I added the SendGrid add-on to my Heroku app. 
+
 === Gems and Validations
 I added two gems: Devise for user authentication, and Rails_Layout to generate
 nice default Bootstrap 3 views. Additionally, I added two validations to the User model: one

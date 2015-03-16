@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      logger.warn "before deliver"
       Notifications.new_user(@user).deliver
+      logger.warn "after deliver"
       redirect_to users_path
     else
       render 'new'
