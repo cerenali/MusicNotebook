@@ -1,5 +1,18 @@
   <h1>Tags#index</h1>
 
+  <h3>Most Recent</h3>
+  <table class="table table-hover">
+    <tr>
+      <th>title</th>
+    </tr>
+    <% @recent_tags.each do |t| %>
+      <tr>
+        <td><%= link_to t.title, tag_path(t.id) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <h3>All Tags</h3>
   <table class="table table-hover">
   	<tr>
   		<th>title</th>

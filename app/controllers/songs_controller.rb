@@ -13,7 +13,8 @@ class SongsController < ApplicationController
   end
 
   def index
-    @songs = Song.all
+    # @songs = Song.all
+    @songs = Song.order(:artist)
   end
 
   def show

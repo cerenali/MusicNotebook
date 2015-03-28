@@ -1,0 +1,7 @@
+<h1>Suggested Friends</h1>
+	
+<% @other_users.each do |user| %>
+    <ul>
+      <li><%= link_to user.username, user_path(user.id) %></li>
+    </ul>
+<% end %>

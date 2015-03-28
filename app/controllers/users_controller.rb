@@ -40,6 +40,11 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def suggested_friends
+    @user = current_user
+    @other_users = User.where.not(id: @user.id)
+  end
+
   private
 
   def user_params

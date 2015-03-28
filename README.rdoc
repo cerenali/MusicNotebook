@@ -1,6 +1,25 @@
 == README
 Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
+=== Queries
+The first query I added was to the Users Controller, in order to create a 
+"suggested friends" feature. In a method called "suggested_friends", I created
+a variable @other_users and populated it using the query
+<tt>User.where.not(id: @user.id)</tt>. This will return all of the users who
+are not the current user, and display them as suggested friends for the current
+user.
+
+The second query I added was to the Songs Controller so that the songs could be
+displayed in alphabetical order by artist. This was accomplished by changing
+one line in the index method: <tt>@songs = Song.order(:artist)</tt>.
+
+The third and fourth queries I added were both to the Tag Controller, in order
+to retrieve the five most recently added tags. In the index method of the tag
+controller, I added a @recent_tags variable and used two queries on it: one to
+sort the tags in order of descending date of creation, and another to limit the
+results to the first 5: <tt>Tag.order(created_at: :desc).limit(5)</tt>. This
+successfully fetches the last 5 tags that were added.
+
 === Heroku Add-Ons
 I added the SendGrid add-on to my Heroku app in order to send password reset 
 emails through Devise. I'm planning to expand this to send all sorts of 
@@ -10,7 +29,7 @@ welcome email for new users once the full functionality of the app is complete.
 At first, I had problems with the SendGrid environmental variables, as some of 
 them were not set in Heroku. This was resolved by setting the missing 
 environment variable in Heroku:
-<<tt>heroku config:add SENDGRID_DOMAIN=[link to my app]</tt>.
+<tt>heroku config:add SENDGRID_DOMAIN=[link to my app]</tt>.
 
 === Gems and Validations
 I added two gems: Devise for user authentication, and Rails_Layout to generate

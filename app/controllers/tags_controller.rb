@@ -14,6 +14,7 @@ class TagsController < ApplicationController
 
   def index
     @tags = Tag.all
+    @recent_tags = Tag.order(created_at: :desc).limit(5)
   end
 
   def show
