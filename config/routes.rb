@@ -40,6 +40,8 @@ Rails.application.routes.draw do
 
   get '/suggested_friends/', to: 'users#suggested_friends'
 
+  get 'search', to: 'application#search'
+
   resources :users
   resources :songs
   resources :tags

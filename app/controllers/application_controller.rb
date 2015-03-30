@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def search
+    @users = User.where("username LIKE ?", "%" + params[:search] + "%")
+    render 'users/index'
+  end
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :username
