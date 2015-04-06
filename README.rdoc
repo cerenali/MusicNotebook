@@ -1,7 +1,7 @@
 == README
 Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
-=== Tagging
+=== Tagging and Search
 Instead of writing a tag system from scratch, I decided to make use of the 
 acts_as_taggable_on[https://github.com/mbleigh/acts-as-taggable-on] gem to 
 implement tagging for songs. This was easier said than done, however, as I'd
@@ -24,6 +24,9 @@ actually always being reset to an empty array upon song creation. Removing
 <tt>=> []</tt> from the <tt>song_params</tt> method fixed the problem, and tags 
 are now properly attached to songs. I also added a new Tag controller and view in order to display all of the songs associated with a particular tag, and made 
 some superficial changes to the appearance of a few pages.
+
+Also, as part of class (3/31/15?), I added a search functionality for users, 
+which can be seen in the navigation bar.
 
 === Queries
 The first query I added was to the Users Controller, in order to create a 
