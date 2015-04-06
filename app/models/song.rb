@@ -12,4 +12,6 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
   validates :artist, presence: true
+  acts_as_taggable   
+  acts_as_taggable_on :tags
 end

@@ -14,7 +14,11 @@ class SongsController < ApplicationController
 
   def index
     # @songs = Song.all
-    @songs = Song.order(:artist)
+    if params[:tag]
+      @songs = Song.tagged_with(params[:tag]).order(:artist)
+    else
+      @songs = Song.order(:artist)
+    end
   end
 
   def show
@@ -40,9 +44,17 @@ class SongsController < ApplicationController
     redirect_to songs_path
   end
 
+  def tagged
+    if params[:tag].present? 
+      @songs = Song.tagged_with(params[:tag])
+    else 
+      @songs = Song.all
+    end  
+  end
+
   private
 
   def song_params
-    params.require(:song).permit(:title, :artist)
+    params.require(:song).permit(:title, :artist, :tag_list)
   end
 end

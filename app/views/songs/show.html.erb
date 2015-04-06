@@ -1,9 +1,13 @@
-  <h1>Songs#show</h1>
+<h1><%= @song.title %></h1>
 
-  <div>
-    <h2><%= @song.title %></h2>
-    <p><%= @song.artist %></p>
-  </div>
+<div>
+  <p>by <%= @song.artist %></p>
 
-  <%= link_to "edit song", edit_song_path(@song.id) %>
-  <p><%= link_to "back to songs", songs_path %></p>
+  <p><strong>Tags: </strong>
+  <% @song.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %> 
+</div>
+
+<%= link_to "edit song", edit_song_path(@song.id) %>
+<p><%= link_to "back to songs", songs_path %></p>

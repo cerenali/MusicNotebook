@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'tag/show'
+
   devise_for :users
   # get 'tags/show'
 
@@ -44,7 +46,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :songs
-  resources :tags
+  resources :tag
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
