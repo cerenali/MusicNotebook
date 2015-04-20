@@ -35,9 +35,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect_to users_path
+      @user = User.find(params[:id])
+    if @user == current_user
+      @user.destroy
+      redirect_to users_path
+    else
+      redirect_to :back, :alert => "Access denied"
+    end
   end
 
   def suggested_friends
