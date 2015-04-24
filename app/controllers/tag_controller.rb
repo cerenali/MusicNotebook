@@ -3,4 +3,9 @@ class TagController < ApplicationController
     @tag = Tag.find(params[:id])
     @songs = Song.tagged_with(@tag.name)
   end
+
+  def index
+      @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc)
+  end
+
 end

@@ -2,17 +2,6 @@ Rails.application.routes.draw do
   # get 'tag/show'
 
   devise_for :users
-  # get 'tags/show'
-
-  # get 'tags/edit'
-
-  # get 'tags/delete'
-
-  # get 'tag/show'
-
-  # get 'tag/edit'
-
-  # get 'tag/delete'
 
   # get 'songs/show'
 
@@ -38,7 +27,8 @@ Rails.application.routes.draw do
 
   # get 'users/index'
 
-  root 'users#index'
+  root 'songs#index'
+  # root 'users#index'
 
   get '/suggested_friends/', to: 'users#suggested_friends'
 
