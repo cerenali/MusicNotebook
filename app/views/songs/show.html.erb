@@ -4,7 +4,7 @@
   <p>by <%= @song.artist %></p>
 
   <p>
-    <% if @user == current_user and current_user.favorites.include? @song %>
+    <% if current_user.favorites.include? @song %>
       <%= link_to "remove from favorites", favorite_song_path(@song), method: :put %>
     <% else %>
       <%= link_to "add to favorites", favorite_song_path(@song), method: :put %>
