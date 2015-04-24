@@ -12,7 +12,7 @@
   			<td><%= song.artist %></td>
         <!-- <td><%= link_to "delete song", song, data: { confirm: 'Are you sure?' }, method: :delete %> </td> -->
         <td>
-          <%= link_to favorite_song_path(song, type: "favorite"), method: :put do %>
+          <%= link_to favorite_song_path(song), method: :put do %>
             <% if current_user and not current_user.favorites.include? song %>
               <span class="glyphicon glyphicon-star-empty"></span>
             <% else %>

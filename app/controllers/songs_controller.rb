@@ -53,18 +53,13 @@ class SongsController < ApplicationController
   end
 
   def favorite
-    type = params[:type]
     @song = Song.find(params[:id])
-    if type == "favorite"
-      current_user.favorites << @song
-      redirect_to :back, notice: "You favorited #{@song.title} by #{@song.artist}"
-    elsif type == "unfavorite"
+    if current_user.favorites.include? @song
       current_user.favorites.delete(@song)
-      redirect_to :back, notice: "You unfavorited #{@song.title} by #{@song.artist}"
     else
-      # Type missing, nothing happens
-      redirect_to :back, notice: 'Nothing happened.'
+      current_user.favorites << @song
     end
+    redirect_to :back
   end
 
   private
