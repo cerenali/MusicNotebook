@@ -5,13 +5,21 @@
   	<tr>
   		<th>title</th>
   		<th>artist</th>
-      <th>options</th>
   	</tr>
   	<% @songs.each do |song| %>
   		<tr>
         <td><%= link_to song.title, song_path(song.id) %></td>
   			<td><%= song.artist %></td>
-        <td><%= link_to "delete song", song, data: { confirm: 'Are you sure?' }, method: :delete %> </td>
+        <!-- <td><%= link_to "delete song", song, data: { confirm: 'Are you sure?' }, method: :delete %> </td> -->
+        <td>
+          <%= link_to favorite_song_path(song, type: "favorite"), method: :put do %>
+            <% if current_user and not current_user.favorites.include? song %>
+              <span class="glyphicon glyphicon-star-empty"></span>
+            <% else %>
+              <span class="glyphicon glyphicon-star"></span>
+            <% end %>
+          <% end %>
+        </td>
   		</tr>
   	<% end %>
   </table>
