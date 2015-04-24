@@ -5,7 +5,8 @@ class TagController < ApplicationController
   end
 
   def index
-      @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc)
+      # @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc)
+      @tags = ActsAsTaggableOn::Tag.most_used
   end
 
 end
