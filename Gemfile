@@ -5,7 +5,6 @@ gem 'annotate'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'devise'
 gem 'acts-as-taggable-on'
-gem 'youtube_search'
 
 group :development do
   gem 'rails_layout'
