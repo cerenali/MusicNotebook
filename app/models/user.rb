@@ -27,4 +27,9 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  has_many :songs
+
+  # Favorite songs of user
+  has_many :favorite_songs # just the 'relationships'
+  has_many :favorites, through: :favorite_songs, source: :song # the actual songs a user favorites
 end

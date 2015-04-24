@@ -9,8 +9,12 @@
   </div>
 
   <div>
-    <h2>Your Songs</h2>
-    
+    <h2>Your Favorite Songs</h2>
+    <ul>
+    <% @user.favorites.each do |song| %>
+      <li><%= link_to song.title, song_path(song) %> by <%= song.artist %></li>
+    <% end %> 
+    </ul>
   </div>
 
   <!-- <%= link_to "edit user", edit_user_path(@user.id) %> -->

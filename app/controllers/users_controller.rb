@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user != current_user
-      redirect_to :back
+      redirect_to :back, :alert => "Access denied"
     end
   end
 

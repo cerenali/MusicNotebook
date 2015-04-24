@@ -14,4 +14,8 @@ class Song < ActiveRecord::Base
   validates :artist, presence: true
   acts_as_taggable   
   acts_as_taggable_on :tags
+  belongs_to :user
+  # Favorited by users
+  has_many :favorite_songs # just the 'relationships'
+  has_many :favorited_by, through: :favorite_songs, source: :user # the actual users favoriting a recipe
 end

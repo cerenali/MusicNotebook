@@ -3,6 +3,13 @@
 <div>
   <p>by <%= @song.artist %></p>
 
+  <p>
+    <% if current_user %>
+      <%= link_to "favorite",   favorite_song_path(@song, type: "favorite"), method: :put %>
+      <%= link_to "unfavorite", favorite_song_path(@song, type: "unfavorite"), method: :put %>
+    <% end %>
+  </p>
+
   <p><strong>Tags: </strong>
   <% @song.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>

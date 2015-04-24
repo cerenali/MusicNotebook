@@ -48,6 +48,10 @@ Rails.application.routes.draw do
   resources :songs
   resources :tag
 
+  resources :songs do
+    put :favorite, on: :member
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
