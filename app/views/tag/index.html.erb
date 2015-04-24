@@ -1,0 +1,15 @@
+
+  <h1>All Tags</h1>
+
+  <table class="table table-hover">
+    <tr>
+      <th>title</th>
+      <th>count</th>
+    </tr>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td><%= link_to tag.name, tag_path(tag.id) %></td>
+        <td><%= tag.taggings_count %></td>
+      </tr>
+    <% end %>
+  </table>
