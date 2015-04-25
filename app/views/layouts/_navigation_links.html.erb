@@ -1,22 +1,37 @@
 <%# add navigation links to this file %>
 
-<li><%= link_to 'Songs', songs_path %></li>
-
-<li><%= link_to 'Users', users_path %></li>
-
-<li><%= link_to 'Tags', tag_index_path %></li>
-
-<% if user_signed_in? %>
-  <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-<% else %>
-  <li><%= link_to 'Login', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
-<% end %>
-
-
 <li>
-  <%= form_tag search_path, method: :get, :class => "navbar-form navbar-left" do %>
-    <%= text_field_tag :search %>
-    <%= submit_tag "Search", class: "btn btn-default" %>
+  <%= link_to songs_path do %>
+    <span class="glyphicon glyphicon-music"></span> Songs
   <% end %>
 </li>
+
+<li>
+  <%= link_to users_path do %>
+    <span class="glyphicon glyphicon-user"></span> Users
+  <% end %>
+</li>
+
+<li>
+  <%= link_to tag_index_path do %>
+    <span class="glyphicon glyphicon-tags"></span> Tags
+  <% end %>
+
+<% if user_signed_in? %>
+  <li>
+    <%= link_to(destroy_user_session_path, :method => :delete) do %>
+      <span class="glyphicon glyphicon-off"></span> Logout
+    <% end %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to new_user_session_path do %>
+      <span class="glyphicon glyphicon-log-in"></span> Login
+    <% end %>
+  </li>
+  <li>
+    <%= link_to new_user_registration_path do %>
+      <span class="glyphicon glyphicon-plus"></span> Sign Up
+    <% end %>
+  </li>
+<% end %>
