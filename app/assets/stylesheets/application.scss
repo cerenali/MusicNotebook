@@ -38,10 +38,12 @@
   height: 100%;
 }
 
-input {
-  width: 50%;
-}
+// :not(new_user) and form {
+//   input {
+//     width: 50%;
 
-input.submit-button {
-  width: 80px;
-}
+//     .submit-button {
+//       width: 80px;
+//     }
+//   }
+// }

@@ -4,7 +4,7 @@
   <p>by <%= @song.artist %></p>
   
   
-  <% if @song.url %>
+  <% if @song.url.length > 0 %>
     <div class="embed-container">
       <%= embed(@song.url) %>
     </div>
