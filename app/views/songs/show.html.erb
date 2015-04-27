@@ -4,11 +4,11 @@
   <p>by <%= @song.artist %></p>
   
   
-  <% if @song.url.length > 0 %>
+  <% if @song.url and @song.url.length > 0 %>
     <div class="embed-container">
       <%= embed(@song.url) %>
     </div>
-    <p><span class="glyphicon glyphicon-facetime-video"></span><%= link_to "view on Youtube", @song.url, :target => "_blank" %></p>
+    <p><span class="glyphicon glyphicon-facetime-video"></span> <%= link_to "view on Youtube", @song.url, :target => "_blank" %></p>
   <% else %>
     <p><span class="glyphicon glyphicon-facetime-video"></span> No Youtube link yet. <%= link_to "Add one!", edit_song_path(@song.id) %></p>
   <% end %>
