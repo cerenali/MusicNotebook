@@ -19,6 +19,11 @@
 
 <% if user_signed_in? %>
   <li>
+      <%= link_to user_path(current_user.id) do %>
+        <span class="glyphicon glyphicon-heart"></span> Favorites
+      <% end %>
+  </li>
+  <li>
     <%= link_to(destroy_user_session_path, :method => :delete) do %>
       <span class="glyphicon glyphicon-off"></span> Logout
     <% end %>
@@ -35,3 +40,16 @@
     <% end %>
   </li>
 <% end %>
+
+<div class="pull-right">
+  <%= form_tag search_path, method: :get, :class => "navbar-form" do %>
+    <div class="input-group">
+      <%= text_field_tag :search, nil, :class => "form-control", :placeholder => "Add a new song" %>
+      <div class="input-group-btn">
+        <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+          <span class="glyphicon glyphicon-search"></span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
