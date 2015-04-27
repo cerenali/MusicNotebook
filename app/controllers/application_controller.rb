@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def search
-    @users = User.where("username LIKE ?", "%" + params[:search] + "%")
-    render 'users/index'
+    # @users = User.where("username LIKE ?", "%" + params[:search] + "%")
+    # render 'users/index'
+    @songs = Song.search(params[:search])
+    render 'songs/index'
   end
 
   protected

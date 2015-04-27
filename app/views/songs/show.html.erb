@@ -2,6 +2,16 @@
 
 <div>
   <p>by <%= @song.artist %></p>
+  
+  
+  <% if @song.url %>
+    <div class="embed-container">
+      <%= embed(@song.url) %>
+    </div>
+    <p><span class="glyphicon glyphicon-facetime-video"></span><%= link_to "view on Youtube", @song.url, :target => "_blank" %></p>
+  <% else %>
+    <p><span class="glyphicon glyphicon-facetime-video"></span> No Youtube link yet. <%= link_to "Add one!", edit_song_path(@song.id) %></p>
+  <% end %>
 
   <p>
     <% if current_user.favorites.include? @song %>

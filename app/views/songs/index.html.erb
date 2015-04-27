@@ -8,16 +8,27 @@
   	</tr>
   	<% @songs.each do |song| %>
   		<tr>
-        <td><%= link_to song.title, song_path(song.id) %></td>
-  			<td><%= song.artist %></td>
-        <!-- <td><%= link_to "delete song", song, data: { confirm: 'Are you sure?' }, method: :delete %> </td> -->
         <td>
-          <%= link_to favorite_song_path(song), method: :put do %>
-            <% if current_user and not current_user.favorites.include? song %>
-              <span class="glyphicon glyphicon-star-empty"></span>
-            <% else %>
-              <span class="glyphicon glyphicon-star"></span>
+          <% if Song.all.include? song %>
+            <%= link_to song.title, song_path(song.id) %>
+          <% else %>
+            <%= link_to song.title, new_song_path(:title => song.title,
+                                                  :artist => song.artist,
+                                                  :url => song.url) %>
+          <% end %>
+        </td>
+  			<td><%= song.artist %></td>
+        <td>
+          <% if Song.all.include? song %>
+            <%= link_to favorite_song_path(song), method: :put do %>
+              <% if not current_user.favorites.include? song %>
+                <span class="glyphicon glyphicon-star-empty"></span>
+              <% else %>
+                <span class="glyphicon glyphicon-star"></span>
+              <% end %>
             <% end %>
+          <% else %>
+              <span class="glyphicon glyphicon-plus-sign"></span>
           <% end %>
         </td>
   		</tr>
@@ -25,5 +36,3 @@
   </table>
 
   <p><%= link_to "Add new song", new_song_path %></p>
-
-  <!-- <p><%= link_to "Back to users", users_path %></p> -->

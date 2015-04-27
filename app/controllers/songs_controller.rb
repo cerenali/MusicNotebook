@@ -6,7 +6,8 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     if @song.save
-      redirect_to songs_path
+      redirect_to song_path(@song.id)
+      # redirect_to songs_path
     else
       render 'new'
     end
@@ -14,7 +15,9 @@ class SongsController < ApplicationController
 
   def index
     # @songs = Song.all
-    if params[:tag]
+    if params[:search]
+      @songs = Song.search(params[:search]).order("created_at DESC")
+    elseif params[:tag]
       @songs = Song.tagged_with(params[:tag]).order(:artist)
     else
       @songs = Song.order(:artist)
@@ -65,6 +68,6 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :artist, :tag_list)
+    params.require(:song).permit(:title, :artist, :tag_list, :url)
   end
 end

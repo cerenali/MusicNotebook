@@ -1,4 +1,4 @@
-<h1>Songs#edit</h1>
+<h1>Edit Song</h1>
 
 <%= form_for(@song) do |f| %>
   <div class="field">
@@ -11,9 +11,17 @@
   </div>
   <div class="field">
     <%= f.label :tags %>
-    <%= f.text_field :tag_list %>
+    <%= f.text_field :tag_list, :class => "tag-box" %>
+  </div>
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url, :class => "url-box" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create', :class => "btn btn-default submit-button" %>
   </div>
+  <!-- not the best way to secure this, but better than nothing for now -->
+  <% if current_user.username == "cerenali" %> 
+    <%= link_to "delete song", @song, data: { confirm: 'Are you sure?' }, method: :delete %>
+  <% end %>
 <% end %>

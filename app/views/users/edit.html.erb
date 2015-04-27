@@ -1,4 +1,4 @@
-  <h1>Users#edit</h1>
+  <h1>Edit Your Profile</h1>
 
   <div class="error-msg">
     <% if @user.errors.any? %>
@@ -26,4 +26,7 @@
     <div class="actions">
       <%= f.submit %>
     </div>
+    <% if current_user == user %>
+      <p><%= link_to "delete user", user, data: { confirm: 'Are you sure?' }, method: :delete %> </p>
+    <% end %>
   <% end %>

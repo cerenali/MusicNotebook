@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424185450) do
+ActiveRecord::Schema.define(version: 20150425054055) do
 
   create_table "favorite_songs", force: :cascade do |t|
     t.integer  "song_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150424185450) do
     t.string   "artist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "url"
   end
 
   create_table "taggings", force: :cascade do |t|
