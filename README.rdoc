@@ -1,6 +1,15 @@
 == README
 Link to Heroku here[https://evening-fjord-8412.herokuapp.com/].
 
+=== YouTube Integration
+Using the <tt>yt</tt> gem, I added the ability to search, add, and play songs
+from YouTube. Typing a query into the search bar at the top now adds search
+results from YouTube, as well as any existing entries already in the database, and 
+saving the song into the database automatically pulls in the video URL so that 
+it can be embedded and played from within the song page. Songs that weren't 
+added from YouTube can still be edited to manually add a URL so that the song 
+can be listened to.
+
 === Tagging and Search
 Instead of writing a tag system from scratch, I decided to make use of the 
 acts_as_taggable_on[https://github.com/mbleigh/acts-as-taggable-on] gem to 
@@ -22,7 +31,8 @@ Although this line was present in every tutorial I read, I suspect something
 had changed since the tutorials were published so that the tag_list was 
 actually always being reset to an empty array upon song creation. Removing  
 <tt>=> []</tt> from the <tt>song_params</tt> method fixed the problem, and tags 
-are now properly attached to songs. I also added a new Tag controller and view in order to display all of the songs associated with a particular tag, and made 
+are now properly attached to songs. I also added a new Tag controller and view 
+in order to display all of the songs associated with a particular tag, and made 
 some superficial changes to the appearance of a few pages.
 
 Also, as part of class (3/31/15?), I added a search functionality for users, 
